@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — MailMerge Pro</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+      padding: 48px 24px;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    header { margin-bottom: 40px; border-bottom: 2px solid #e5e5e5; padding-bottom: 24px; }
+    header h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    header p { color: #555; font-size: 14px; }
+    h2 { font-size: 18px; font-weight: 600; margin: 32px 0 10px; }
+    p { margin-bottom: 14px; color: #333; }
+    ul { margin: 10px 0 14px 24px; color: #333; }
+    ul li { margin-bottom: 6px; }
+    a { color: #4f46e5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .badge {
+      display: inline-block;
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 13px;
+      font-family: monospace;
+      color: #333;
+    }
+    footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid #e5e5e5; font-size: 13px; color: #888; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <h1>Privacy Policy</h1>
+      <p>MailMerge Pro Chrome Extension &nbsp;·&nbsp; Last updated: April 22, 2026</p>
+    </header>
+
+    <p>MailMerge Pro ("the Extension") is a Chrome browser extension that lets you send personalised bulk emails via your Gmail account using data from Google Sheets or CSV files. This policy explains what data is collected, how it is used, and your rights.</p>
+
+    <h2>1. Data We Collect</h2>
+    <p>The Extension collects the following data solely to provide its core functionality:</p>
+    <ul>
+      <li><strong>Registration information</strong> — your full name, email address, and a brief description of how you plan to use the Extension. This is submitted once during account registration.</li>
+      <li><strong>Recipient data</strong> — email addresses and merge-tag fields (e.g. first name, company) that you provide via Google Sheets or CSV. This data is processed locally in your browser and is never stored on our servers.</li>
+      <li><strong>Email content</strong> — the subject and body of emails you compose. This data is processed locally and sent directly to Gmail via the Gmail API on your behalf. It is never stored by the Extension developer.</li>
+      <li><strong>Usage counters</strong> — a daily email send count stored locally in your browser (<span class="badge">chrome.storage.local</span>) to enforce the free-tier limit. This data never leaves your device.</li>
+    </ul>
+
+    <h2>2. How We Use Your Data</h2>
+    <ul>
+      <li><strong>Registration information</strong> is stored in a private Google Sheet accessible only to the developer, and is used solely to review and approve access requests. It is not shared with any third party.</li>
+      <li><strong>Recipient data and email content</strong> are used only to send the emails you request. They are processed in your browser and transmitted directly to Google's Gmail API. We never see or store this data.</li>
+      <li><strong>Usage counters</strong> are used to enforce the 50 emails/day free-tier limit. They are stored locally and never transmitted.</li>
+    </ul>
+
+    <h2>3. Third-Party Services</h2>
+    <p>The Extension integrates with the following Google services under your Google account credentials:</p>
+    <ul>
+      <li><strong>Gmail API</strong> — to send emails and save drafts on your behalf.</li>
+      <li><strong>Google Sheets API</strong> — to read your recipient data and to write your registration row to the developer's approval sheet.</li>
+      <li><strong>Google OAuth 2.0</strong> — to authenticate you and obtain the permissions above. No passwords are stored by the Extension.</li>
+    </ul>
+    <p>Use of these services is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+    <h2>4. Data Storage and Retention</h2>
+    <ul>
+      <li>Registration information is retained in the developer's private Google Sheet until you request deletion.</li>
+      <li>Local extension data (approval state, usage counters, scheduled job payloads, audit log) is stored in <span class="badge">chrome.storage.local</span> on your device and is deleted when you uninstall the Extension.</li>
+      <li>No personal data is stored on external servers owned or operated by the developer beyond the registration Google Sheet.</li>
+    </ul>
+
+    <h2>5. Data Sharing</h2>
+    <p>We do not sell, rent, or share your personal data with any third parties, advertisers, or analytics services. The only data transmitted off your device is:</p>
+    <ul>
+      <li>Your registration details — sent to the developer's private Google Sheet via the Sheets API.</li>
+      <li>Your emails — sent to Gmail recipients via the Gmail API, exactly as you request.</li>
+    </ul>
+
+    <h2>6. Permissions Used</h2>
+    <ul>
+      <li><span class="badge">gmail.send</span> / <span class="badge">gmail.compose</span> — to send emails and save drafts.</li>
+      <li><span class="badge">spreadsheets</span> — to read your Google Sheet data and write your registration entry.</li>
+      <li><span class="badge">userinfo.email</span> — to identify your Google account for authentication.</li>
+      <li><span class="badge">identity</span> — Chrome's built-in OAuth API, used to obtain the above tokens.</li>
+      <li><span class="badge">storage</span> — to save local state (approval status, usage counters) on your device.</li>
+      <li><span class="badge">alarms</span> — to fire scheduled email sends at the time you specify.</li>
+    </ul>
+
+    <h2>7. Your Rights</h2>
+    <p>You may request deletion of your registration data (name, email, description) at any time by contacting the developer at the address below. Local extension data can be cleared by uninstalling the Extension or by running <span class="badge">chrome.storage.local.clear()</span> in the Extension's DevTools console.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>The Extension is not directed at children under 13. We do not knowingly collect personal data from children.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. The "Last updated" date at the top of this page will reflect any changes. Continued use of the Extension after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>10. Contact</h2>
+    <p>For privacy-related questions or data deletion requests, contact:</p>
+    <ul>
+      <li>Email: <a href="mailto:hizinfo2026@gmail.com">hizinfo2026@gmail.com</a></li>
+    </ul>
+
+    <footer>
+      &copy; 2026 MailMerge Pro. All rights reserved. &nbsp;·&nbsp;
+      <a href="https://bashroy.github.io/mailmergepro-privacy/">Privacy Policy</a>
+    </footer>
+
+  </div>
+</body>
+</html>
+
