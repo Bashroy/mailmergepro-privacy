@@ -42,7 +42,7 @@
 
     <header>
       <h1>Privacy Policy</h1>
-      <p>MailMerge Pro Chrome Extension &nbsp;·&nbsp; Last updated: May 23, 2026</p>
+      <p>MailMerge Pro Chrome Extension &nbsp;·&nbsp; Last updated: May 25, 2026</p>
     </header>
 
     <p>MailMerge Pro ("the Extension") is a Chrome browser extension that lets you send personalised bulk emails via your Gmail account using data from Google Sheets or CSV files. This policy explains what data is collected, how it is used, and your rights.</p>
@@ -50,25 +50,26 @@
     <h2>1. Data We Collect</h2>
     <p>The Extension collects the following data solely to provide its core functionality:</p>
     <ul>
-      <li><strong>Registration information</strong> — your full name, email address, and a brief description of how you plan to use the Extension. This is submitted once during account registration.</li>
       <li><strong>Recipient data</strong> — email addresses and merge-tag fields (e.g. first name, company) that you provide via Google Sheets or CSV. This data is processed locally in your browser and is never stored on our servers.</li>
       <li><strong>Email content</strong> — the subject and body of emails you compose. This data is processed locally and sent directly to Gmail via the Gmail API on your behalf. It is never stored by the Extension developer.</li>
       <li><strong>Usage counters</strong> — a daily email send count stored locally in your browser (<span class="badge">chrome.storage.local</span>) to enforce the free-tier limit. This data never leaves your device.</li>
+      <li><strong>Anonymous usage data</strong> — anonymous events (such as "popup opened" or "send button clicked") are sent to a developer-owned analytics endpoint to help understand how the Extension is used. No personal data, email addresses, email content, or recipient information is included. Each event is linked only to a random session ID that is generated fresh every time the popup opens and is never stored on your device.</li>
     </ul>
 
     <h2>2. How We Use Your Data</h2>
     <ul>
-      <li><strong>Registration information</strong> is stored in a private Google Sheet accessible only to the developer, and is used solely to review and approve access requests. It is not shared with any third party.</li>
       <li><strong>Recipient data and email content</strong> are used only to send the emails you request. They are processed in your browser and transmitted directly to Google's Gmail API. We never see or store this data.</li>
-      <li><strong>Usage counters</strong> are used to enforce the 50 emails/day free-tier limit. They are stored locally and never transmitted.</li>
+      <li><strong>Usage counters</strong> are used to enforce the free-tier limit. They are stored locally and never transmitted.</li>
+      <li><strong>Anonymous usage data</strong> is used solely to understand which features are used and to improve the Extension. It contains no personal information and cannot be used to identify you.</li>
     </ul>
 
     <h2>3. Third-Party Services</h2>
     <p>The Extension integrates with the following Google services under your Google account credentials:</p>
     <ul>
       <li><strong>Gmail API</strong> — to send emails and save drafts on your behalf.</li>
-      <li><strong>Google Sheets API</strong> — to read your recipient data and to write your registration row to the developer's approval sheet.</li>
+      <li><strong>Google Sheets API</strong> — to read your recipient data from Google Sheets (read-only).</li>
       <li><strong>Google OAuth 2.0</strong> — to authenticate you and obtain the permissions above. No passwords are stored by the Extension.</li>
+      <li><strong>Google Apps Script</strong> — anonymous usage events are sent to a developer-owned Apps Script endpoint (not under your credentials). No personal data is transmitted. This endpoint writes only to the developer's private analytics sheet.</li>
     </ul>
     <p>Use of these services is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
@@ -82,8 +83,8 @@
     <h2>5. Data Sharing</h2>
     <p>We do not sell, rent, or share your personal data with any third parties, advertisers, or analytics services. The only data transmitted off your device is:</p>
     <ul>
-      <li>Your registration details — sent to the developer's private Google Sheet via the Sheets API.</li>
       <li>Your emails — sent to Gmail recipients via the Gmail API, exactly as you request.</li>
+      <li>Anonymous usage events — sent to a developer-owned Google Apps Script endpoint. These events contain no personal data, no email addresses, no email content, and no recipient information. See §1 for the full list of fields.</li>
     </ul>
 
     <h2>6. Sender Responsibilities</h2>
@@ -98,16 +99,17 @@
 
     <h2>7. Permissions Used</h2>
     <ul>
-      <li><span class="badge">gmail.send</span> / <span class="badge">gmail.compose</span> — to send emails and save drafts.</li>
-      <li><span class="badge">spreadsheets</span> — to read your Google Sheet data and write your registration entry.</li>
+      <li><span class="badge">gmail.send</span> / <span class="badge">gmail.compose</span> — to send emails and save drafts on your behalf.</li>
+      <li><span class="badge">spreadsheets.readonly</span> — to read your recipient data from Google Sheets (read-only; no data is written to your sheets).</li>
       <li><span class="badge">userinfo.email</span> — to identify your Google account for authentication.</li>
       <li><span class="badge">identity</span> — Chrome's built-in OAuth API, used to obtain the above tokens.</li>
-      <li><span class="badge">storage</span> — to save local state (approval status, usage counters) on your device.</li>
+      <li><span class="badge">storage</span> — to save local state (usage counters, scheduled job payloads, audit log) on your device.</li>
       <li><span class="badge">alarms</span> — to fire scheduled email sends at the time you specify.</li>
+      <li><span class="badge">script.google.com</span> — to send anonymous usage events to the developer's analytics endpoint (no OAuth; no user data transmitted).</li>
     </ul>
 
     <h2>8. Your Rights</h2>
-    <p>You may request deletion of your registration data (name, email, description) at any time by contacting the developer at the address below. Local extension data can be cleared by uninstalling the Extension or by running <span class="badge">chrome.storage.local.clear()</span> in the Extension's DevTools console.</p>
+    <p>Local extension data (usage counters, scheduled jobs, audit log) can be cleared at any time by uninstalling the Extension or by running <span class="badge">chrome.storage.local.clear()</span> in the Extension's DevTools console. For any other privacy-related questions, contact the developer at the address below.</p>
 
     <h2>9. Children's Privacy</h2>
     <p>The Extension is not directed at children under 13. We do not knowingly collect personal data from children.</p>
